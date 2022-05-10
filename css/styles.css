@@ -1,7 +1,31 @@
+:root {
+  --body-bg:#effafa;
+  --green: #5ca5a5;
+  --light: rgb(92, 165, 165, 0.1);
+  --blurry-green: #7c8f8f;
+  --black: #2b3939;
+}
+
+
+/* GLOBAL */
+html{
+  box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing:inherit;
+}
+
+
+
 /* FONTS */
 @font-face {
   font-family: 'League Spartan';
-  src: url('../fonts/LeagueSpartan-Medium.woff2') format('woff2'),
+  src: url('../fonts/') format('woff2'),
       url('../fonts/LeagueSpartan-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
@@ -17,48 +41,18 @@
   font-display: swap;
 }
 
-/* GLOBAL */
-html {
-  box-sizing: border-box;
-  height: 100%;
-  scroll-behavior: smooth;
-}
 
-*,
-*::before,
-*::after{
-  box-sizing: inherit;
-}
 
 body{
-  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 24px;
-  font-family:  'League Spartan','Arial', sans-serif;
   height: 100%;
-  background-color:  #EFFAFA;
-  color: #2B3939;
-}
-
-*:focus{
-  outline: 2px dashed var();
-  outline-offset: 4px;
-}
-
-.visually-hidden {
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-	padding:0 !important;
-	border:0 !important;
-	height: 1px !important;
-	width: 1px !important;
-	overflow: hidden;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family:"League Spartan", "Arial", sans-serif;
+  background-color: #fff;
+  color: var(--black);
 }
 
 img{
@@ -67,10 +61,22 @@ img{
 }
 
 
+/* VISUALLY-HIDDEN */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 /* CONTAINER */
-.container {
+.container{
   width: 100%;
-  max-width: 1160px;
+  max-width: 1150px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -78,15 +84,78 @@ img{
 }
 
 
-/* MAIN CONTENT */
-.main-content {
-  flex-grow: 1;
+/* BADGE */
+.badge {
+  display: inline-block;
+  padding: 6px 8px 4px;
+  border-radius: 12px;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: -0.08px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-  .site-header {
-    flex-shrink: 0;
-    height: 156px;
-    background-color: var(--color-link);
-    background-image: url("../img/Combined\ Shape.png");
-    margin-bottom: 76px;
+.badge-green {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.badge-black {
+  background-color: var(--black);
+  color: #fff;
+
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--light);
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  color:var(--green);
+}
+
+/* MAIN-CONTENT */
+.main-content{
+  padding-top: 76px;
+  padding-bottom: 120px;
+  flex-grow: 1;
+  background-color: var(--body-bg);
+}
+
+
+/* SITE-HEADER */
+.site-header {
+  min-height: 156px;
+  background-color: var(--green);
+  background-image: url(../img/combined-shape.svg);
+  background-size: auto 100%;
+  background-position: center center;
+}
+
+.content-wrapper{
+  width: 100%;
+  display: flex;
+}
+
+
+/* JOB-LISTINGS */
+.job-listings {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.job-listings-item {
+  display: flex;
+  align-items: center;
+  padding: 32px 40px 32px 35px;
+  background-color: #fff;
+  border-left: 5px solid transparent;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
 }
