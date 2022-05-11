@@ -17,26 +17,27 @@ html{
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing:inherit;
 }
 
 
-
-/* FONTS */
-@font-face {
-  font-family: 'League Spartan';
-  src: url('../fonts/') format('woff2'),
-      url('../fonts/LeagueSpartan-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'League Spartan';
   src: url('../fonts/LeagueSpartan-Bold.woff2') format('woff2'),
       url('../fonts/LeagueSpartan-Bold.woff') format('woff');
   font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'League Spartan';
+  src: url('../fonts/LeagueSpartan-Medium.woff2') format('woff2'),
+      url('../fonts/LeagueSpartan-Medium.woff') format('woff');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -50,7 +51,7 @@ body{
   font-size: 15px;
   font-weight: bold;
   line-height: 1.5;
-  font-family:"League Spartan", "Arial", sans-serif;
+  font-family:'League Spartan', 'Arial', sans-serif;
   background-color: #fff;
   color: var(--black);
 }
@@ -86,9 +87,11 @@ img{
 
 /* BADGE */
 .badge {
+  font-family: 'League Spartan';
   display: inline-block;
-  padding: 6px 8px 4px;
+  padding: 6px 8px 4px 8px;
   border-radius: 12px;
+  align-items: center;
   font-size: 11px;
   line-height: 14px;
   letter-spacing: -0.08px;
@@ -99,15 +102,31 @@ img{
 .badge-green {
   background-color: var(--green);
   color: #fff;
+  margin-right: 8px;
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: -0.0846154px;
+  text-transform: uppercase;
 }
 
 .badge-black {
   background-color: var(--black);
   color: #fff;
-
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: -0.0846154px;
+  text-transform: uppercase;
 }
 
 .tag {
+  font-family: 'League Spartan';
   display: inline-block;
   padding: 4px 8px;
   border-radius: 4px;
@@ -117,6 +136,11 @@ img{
   line-height: 24px;
   letter-spacing: -0.1px;
   color:var(--green);
+  font-style: normal;
+}
+
+.tag:not(:last-child){
+  margin-right: 16px;
 }
 
 /* MAIN-CONTENT */
@@ -132,16 +156,40 @@ img{
 .site-header {
   min-height: 156px;
   background-color: var(--green);
-  background-image: url(../img/combined-shape.svg);
+  background-image: url(../img/Combined\ Shape.png);
   background-size: auto 100%;
   background-position: center center;
+}
+
+.job-listing-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-shrink: 0;
 }
 
 .content-wrapper{
   width: 100%;
   display: flex;
+  align-items: center;
+  background-color:#fff;
+  padding: 32px 40px;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  border-radius: 5px;
 }
 
+.border-left{
+  border-left: 5px solid var(--green);
+}
+
+.jobs-listings-item-logo{
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 24px;
+}
 
 /* JOB-LISTINGS */
 .job-listings {
@@ -149,7 +197,6 @@ img{
   margin: 0;
   list-style: none;
 }
-
 .job-listings-item {
   display: flex;
   align-items: center;
@@ -158,4 +205,82 @@ img{
   border-left: 5px solid transparent;
   border-radius: 5px;
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+
+.job-listing-item:not(:last-child){
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+}
+
+
+.developer-about-info{
+  display: flex;
+  margin-right: auto;
+
+}
+
+.job-listings-company-name{
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--green);
+  margin-right: 16px;
+}
+
+.job-listings-link{
+  text-decoration: none;
+}
+.job-listings-badges{
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+
+.job-listings-position{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2B3939;
+  text-decoration: none;
+  margin: 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.job-listings-addl{
+  display: flex;
+  align-items: center;
+}
+.job-listings-addl-item{
+  position: relative;
+  font-family: 'League Spartan';
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.115385px;
+  color: #7C8F8F;
+  font-style: normal;
+}
+
+
+
+
+.job-listings-addl-item:not(:last-child){
+  margin-right: 36px;
+}
+.job-listings-addl-item:not(:last-child)::after{
+  position: absolute;
+  top:  calc(50% - 2px);
+  right: -22px;
+  width: 4px;
+  height: 4px;
+  content: "";
+  background-color:#B7C4C4;;
+  border-radius: 50%;
 }
