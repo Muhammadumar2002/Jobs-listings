@@ -101,7 +101,7 @@ img{
 
 .badge-green {
   background-color: var(--green);
-  color: #fff;
+  color: var(--body-bg);
   margin-right: 8px;
   font-family: 'League Spartan';
   font-style: normal;
@@ -115,7 +115,7 @@ img{
 
 .badge-black {
   background-color: var(--black);
-  color: #fff;
+  color: var(--body-bg);
   font-family: 'League Spartan';
   font-style: normal;
   font-weight: 700;
@@ -172,7 +172,7 @@ img{
   width: 100%;
   display: flex;
   align-items: center;
-  background-color:#fff;
+  background-color:var(--body-bg);
   padding: 32px 40px;
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
   border-radius: 5px;
@@ -201,7 +201,7 @@ img{
   display: flex;
   align-items: center;
   padding: 32px 40px 32px 35px;
-  background-color: #fff;
+  background-color:var(--body-bg);
   border-left: 5px solid transparent;
   border-radius: 5px;
   box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
@@ -264,7 +264,7 @@ img{
   font-size: 15px;
   line-height: 24px;
   letter-spacing: -0.115385px;
-  color: #7C8F8F;
+  color: var(--blurry-green);
   font-style: normal;
 }
 
@@ -281,6 +281,6 @@ img{
   width: 4px;
   height: 4px;
   content: "";
-  background-color:#B7C4C4;;
+  background-color:var(--blurry-green);
   border-radius: 50%;
 }
